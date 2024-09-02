@@ -8,12 +8,12 @@ class RedisClient{
 
         this.redisClient.on("error", (err) => {
             this.redisClientIsConnected = false;
-            console.log("Failed to connect to redis client..",err.message);
+            console.log(err.message);
         });
 
         this.redisClient.on('connect', () => {
             this.redisClientIsConnected = true;
-            console.log("redisClient is connected");
+            // console.log("redisClient is connected");
         });
     }
 
@@ -34,5 +34,5 @@ class RedisClient{
 
 }
 
-export const redisNewClient = new RedisClient();
-export default redisNewClient;
+export const redisClient = new RedisClient();
+export default redisClient;
